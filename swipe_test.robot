@@ -43,7 +43,7 @@ Swipe custom
 
 *** Test Cases ***
 Test swipe
-    Open my app    no_reset=${False}
+    Open my app
 
     ${height}      Get Window Height
     ${width}       Get Window Width
@@ -54,19 +54,10 @@ Test swipe
 
     Log To Console    \n
 
-    FOR    ${counter}    IN RANGE   5
-        ${locator}       Set Variable    xpath=//android.view.View[@content-desc="Transact Again"]
-        ${rect_el}       Get Element Rect    ${locator}
-        ${bottom_box}    Evaluate    ${rect_el['y']}+${rect_el['height']}
-        
+    FOR    ${counter}    IN RANGE   3
         Swipe custom    ${center_x}    ${start_y}    ${center_x}    ${end_y}    100
         # AppiumLibrary.Swipe    ${center_x}    ${start_y}    ${center_x}    ${end_y}    1000
-
-        ${rect_el_b}     Get Element Rect    ${locator}
-        ${bottom_box_b}  Evaluate    ${rect_el_b['y']}+${rect_el_b['height']}
-        ${range_diff}    Evaluate    ${bottom_box}-${bottom_box_b}
-        
-        Log To Console    rect_y:${bottom_box} -> y:${bottom_box_b}, \tdiff:${range_diff}
+        Sleep    1s
     END
 
     [Teardown]    AppiumLibrary.Close Application
