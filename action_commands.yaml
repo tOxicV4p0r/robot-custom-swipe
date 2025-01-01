@@ -1,0 +1,45 @@
+custom_command:
+  touch:
+    actions:
+      - type: pointer
+        id: finger1
+        parameters:
+          pointerType: touch
+        actions:
+          - type: pointerMove
+            duration: 0
+            x: 0
+            y: 0
+          - type: pointerDown
+            button: 0
+          - type: pause
+            duration: 100
+          - type: pointerUp
+            button: 0
+
+  swipe:
+    actions:
+      - type: pointer
+        id: finger1
+        parameters:
+          pointerType: touch
+        actions:
+          - type: pointerMove
+            duration: 0
+            x: 0
+            y: 0
+          - type: pointerDown
+            button: 0
+          - type: pointerMove
+            duration: 1000
+            origin: viewport
+            x: 0
+            y: 0
+          - type: pointerMove
+            duration: 100
+            origin: viewport
+            x: 0
+            y: 0
+          - type: pointerUp
+            duration: 0
+            button: 0

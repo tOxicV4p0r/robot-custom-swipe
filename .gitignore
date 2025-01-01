@@ -1,0 +1,6 @@
+*.html
+*.xml
+*.apk
+resources
+common.robot
+.venv
